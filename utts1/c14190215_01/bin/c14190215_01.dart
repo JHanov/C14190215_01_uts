@@ -11,40 +11,78 @@ void main(List<String> arguments) {
   int ctr = 0;
 
   if (Jumlah != null) {
-    for (int i = 0; i <= stg; i++) {
-      for (int j = stg; j > i; j++) {
-        stdout.write(" ");
-      }
-      for (int j = 0; j < (2 * i - 1); j++) {
-        if (j == 0 || j == (2 * i - 1) - 1) {
-          stdout.write("+");
-        } else {
-          if (ctr == kata!.length) {
-            ctr = 0;
-          }
-          stdout.write(kata[ctr]);
-          ctr++;
+    if (Jumlah % 2 == 1) {
+      for (int i = 0; i <= stg; i++) {
+        for (int j = stg; j > i; j--) {
+          stdout.write(" ");
         }
+        for (int j = 0; j < (2 * i - 1); j++) {
+          if (j == 0 || j == (2 * i - 1) - 1) {
+            stdout.write("+");
+          } else {
+            if (ctr == kata!.length) {
+              ctr = 0;
+            }
+            stdout.write(kata[ctr]);
+            ctr++;
+          }
+        }
+        stdout.write("\n");
       }
-      stdout.write("\n");
-    }
 
-    for (int i = stg - 1; i >= 0; i--) {
-      for (int j = stg; j > 1; j--) {
-        stdout.write(" ");
-      }
-      for (int j = 0; j < (2 * i - 1); j++) {
-        if (j == 0 || j == (2 * i - 1) - 1) {
-          stdout.write("+");
-        } else {
-          if (ctr == kata!.length) {
-            ctr = 0;
-          }
-          stdout.write(kata[ctr]);
-          ctr++;
+      for (int i = stg - 1; i >= 0; i--) {
+        for (int j = stg; j > i; j--) {
+          stdout.write(" ");
         }
+        for (int j = 0; j < (2 * i - 1); j++) {
+          if (j == 0 || j == (2 * i - 1) - 1) {
+            stdout.write("+");
+          } else {
+            if (ctr == kata!.length) {
+              ctr = 0;
+            }
+            stdout.write(kata[ctr]);
+            ctr++;
+          }
+        }
+        stdout.write("\n");
       }
-      stdout.write("\n");
+    } else if (Jumlah % 2 == 0) {
+      for (int i = 0; i <= stg; i++) {
+        for (int j = stg; j > i; j--) {
+          stdout.write(" ");
+        }
+        for (int j = 0; j < (2 * i - 1); j++) {
+          if (j == 0 || j == (2 * i - 1) - 1) {
+            stdout.write("");
+          } else {
+            if (ctr == kata!.length) {
+              ctr = 0;
+            }
+            stdout.write(kata[ctr]);
+            ctr++;
+          }
+        }
+        stdout.write("\n");
+      }
+
+      for (int i = stg - 1; i >= 0; i--) {
+        for (int j = stg; j > i; j--) {
+          stdout.write(" ");
+        }
+        for (int j = 0; j < (2 * i - 1); j++) {
+          if (j == 0 || j == (2 * i - 1) - 1) {
+            stdout.write("");
+          } else {
+            if (ctr == kata!.length) {
+              ctr = 0;
+            }
+            stdout.write(kata[ctr]);
+            ctr++;
+          }
+        }
+        stdout.write("\n");
+      }
     }
   }
 }
